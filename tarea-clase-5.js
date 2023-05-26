@@ -19,3 +19,19 @@ function borrarInputs(){
 function calcularSalarioMensual(salarioAnual){
   return (salarioAnual / 12).toFixed(2);
 }
+
+//TAREA 2
+const $elemName = document.querySelector("#name")
+const $elemLastName = document.querySelector("#lastname")
+const $elemAge = document.querySelector("#age")
+const $elemH1 = document.querySelector(".subtitle")
+
+document.querySelector("#greetings").onclick = function(){
+  $elemH1.textContent = `Bienvenido, ${$elemName.value}${$elemLastName.value}${$elemAge.value}`
+}
+
+document.querySelector("#clean-inputs-ex2").onclick = function(){
+  borrarInputs($elemName,$elemLastName,$elemAge)
+  $elemH1.textContent = "Bienvenido!";
+}
+//----
