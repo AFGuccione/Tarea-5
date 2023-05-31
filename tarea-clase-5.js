@@ -127,3 +127,77 @@ function removeAllChildNodes(parent) {
   }
 }
 
+//Tarea 4
+const $liValues = document.querySelectorAll("ol li")
+const $ems = document.querySelectorAll("p em")
+
+document.querySelector("#clean-inputs-ex4").onclick = function(){
+  for(let i=0;i<$ems.length;i++){
+    $ems[i].textContent = ""
+  }
+}
+
+document.querySelector("#calculate-salary").onclick = function(){
+  let arr = []
+  for(i=0;i<$liValues.length;i++){
+    arr.push(Number($liValues[i].textContent))
+  }
+  $ems[0].textContent += average(arr)
+  $ems[1].textContent += min(arr)
+  $ems[2].textContent += max(arr)
+  $ems[3].textContent += mode(arr)
+
+}
+
+function average(list){
+  let acc = 0
+  for(i=0;i<list.length;i++){
+    acc=+list[i]
+  }
+
+  let average = acc / list.length
+  return average.toFixed(2)
+}
+
+function min(list){
+  let value = list[0]
+  for(i=0;i<list.length;i++){
+    if(value > list[i]){
+      value = list[i]
+    }
+  }
+  return value
+}
+
+function max(list){
+  let value = list[0]
+  for(i=0;i<list.length;i++){
+    if(value < list[i]){
+      value = list[i]
+    }
+  }
+  return value
+}
+
+function mode(list){
+  let modeCounter = 0
+  let modeArray = []
+
+  for(let i=0;i<list.length;i++){
+    let counter = 0
+    for(let j=i;j<list.length;j++){
+      if(list[i] === list[j+1]){
+        counter += 1
+      }
+    }
+    
+    if(counter > modeCounter){
+      modeArray = []
+      modeCounter = counter
+      modeArray.push(list[i])
+    }else if(counter == modeCounter){
+      modeArray.push(list[i]);
+    }
+  }
+  return modeArray
+}
