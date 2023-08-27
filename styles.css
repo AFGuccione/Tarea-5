@@ -1,0 +1,40 @@
+h1 {
+    font-size: 1.3em;
+}
+
+h4{
+    font-size: 1.2em;
+    font-weight:normal;
+    font-style:italic;
+}
+
+.exercises{
+    display:none;
+}
+
+.title{
+    font-size: 1.7em;
+    font-weight:bold;
+    margin: 17px auto;
+}
+
+.plus-symbol, .minus-symbol{
+    height: 18px;
+    margin: auto 2px;
+
+}
+header > *{
+    display:inline-block
+}
+
+.text-box{
+    display: block;
+    width:40em;
+    margin-bottom: 10px;
+}
+
+.text-box > *{
+    margin: 0px;
+    padding: 0px;
+    gap: 0px;
+}

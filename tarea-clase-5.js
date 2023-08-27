@@ -1,3 +1,19 @@
+//Funcionalidad 4 botones iniciales
+let buttons = document.querySelectorAll(".button-exc")
+for(i=0;i<4;i++){
+  buttons[i].onclick = function(){
+    display(this)
+  }
+}
+function display(buttonEl){
+  let el = document.querySelector(`.${buttonEl.id}`)
+  if (el.style.display === "block") {
+    el.style.display = "none";
+  } else {
+    el.style.display = "block";
+  }
+}
+
 //TAREA 1
 const $elemSalarioAnual = document.querySelector("#anually-salary-box")
 const $elemSalarioMensual = document.querySelector("#monthly-salary-box")
